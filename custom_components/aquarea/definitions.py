@@ -818,6 +818,14 @@ def build_switches(mqtt_prefix: str) -> list[HeishaMonSwitchEntityDescription]:
             entity_category=EntityCategory.CONFIG,
             state=bit_to_bool,
         ),
+        HeishaMonSwitchEntityDescription(
+            heishamon_topic_id="SET18",  # corresponds to TOP99
+            key=f"{mqtt_prefix}main/Buffer_Installed",
+            command_topic=f"{mqtt_prefix}commands/SetBuffer",
+            name="Aquarea Buffer tank",
+            entity_category=EntityCategory.CONFIG,
+            state=bit_to_bool,    
+        ),
     ]
 
 
