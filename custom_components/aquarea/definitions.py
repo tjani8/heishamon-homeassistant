@@ -868,7 +868,6 @@ def build_binary_sensors(
             key=f"{mqtt_prefix}main/Room_Heater_State",
             name="Aquarea Room Heater Enabled",
             state=bit_to_bool,
-            device_class=BinarySensorDeviceClass.HEAT,
         ),
         HeishaMonBinarySensorEntityDescription(
             heishamon_topic_id="TOP60",
@@ -889,8 +888,7 @@ def build_binary_sensors(
             key=f"{mqtt_prefix}main/Force_Heater_State",
             name="Aquarea Force heater status",
             state=bit_to_bool,
-            device_class=BinarySensorDeviceClass.RUNNING,
-        ),
+       ),
         HeishaMonBinarySensorEntityDescription(
             heishamon_topic_id="TOP93",
             key=f"{mqtt_prefix}main/Pump_Duty",
